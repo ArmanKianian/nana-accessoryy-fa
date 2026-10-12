@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+const {
+  title = "نانا اکسسوری شاپ | اکسسوری دخترانه و فانتزی",
+  description = "نانا اکسسوری شاپ؛ دنیایی از اکسسوری‌های دخترانه، فانتزی و اکسسوری مو. مدل‌های جدید را ببین و برای اطلاع از قیمت، موجودی و سفارش به اینستاگرام نانا پیام بده.",
+  canonical = "https://armankianian.github.io/nana-accessoryy-fa/",
+  image = "https://armankianian.github.io/nana-accessoryy-fa/og-cover.svg",
+  noindex = false
+} = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffaf7" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="نانا اکسسوری شاپ" />
+    <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="sitemap" href="https://armankianian.github.io/nana-accessoryy-fa/sitemap-index.xml" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="نانا اکسسوری شاپ" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="نانا اکسسوری شاپ؛ دنیایی از اکسسوری‌های دوست‌داشتنی" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

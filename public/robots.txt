@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://armankianian.github.io/nana-accessoryy-fa/sitemap-index.xml

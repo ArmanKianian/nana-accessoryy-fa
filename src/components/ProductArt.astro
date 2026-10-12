@@ -1,0 +1,43 @@
+---
+const { kind = "bow", bg = "#f8dce4", label = "اکسسوری فانتزی" } = Astro.props;
+---
+<div class="product-art aspect-[4/5] rounded-[1.5rem]" style={`--art-bg:${bg}`} role="img" aria-label={label}>
+  {kind === "bow" && (
+    <svg viewBox="0 0 240 300" aria-hidden="true">
+      <defs><linearGradient id="bow-gradient" x1="0" x2="1"><stop stop-color="#c84e79" /><stop offset="1" stop-color="#f29bb6" /></linearGradient></defs>
+      <ellipse cx="80" cy="138" rx="53" ry="43" transform="rotate(24 80 138)" fill="url(#bow-gradient)" stroke="#a43b63" stroke-width="3" />
+      <ellipse cx="160" cy="138" rx="53" ry="43" transform="rotate(-24 160 138)" fill="url(#bow-gradient)" stroke="#a43b63" stroke-width="3" />
+      <path d="M111 140 91 210 121 194 130 225 132 146Z" fill="#db6e94" /><path d="M129 146 137 225 159 203 147 140Z" fill="#e987a8" />
+      <rect x="103" y="121" width="34" height="40" rx="12" fill="#f8c6d7" stroke="#a43b63" stroke-width="3" /><circle cx="120" cy="141" r="6" fill="#fff3f4" />
+      <g fill="#fff4f0"><circle cx="62" cy="112" r="4" /><circle cx="178" cy="119" r="4" /><circle cx="154" cy="167" r="3" /></g>
+    </svg>
+  )}
+  {kind === "flower" && (
+    <svg viewBox="0 0 240 300" aria-hidden="true">
+      <g transform="translate(120 142)" fill="#fff5f0" stroke="#e8a7b8" stroke-width="2">
+        <ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(0)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(45)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(90)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(135)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(180)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(225)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(270)" /><ellipse cx="0" cy="-40" rx="24" ry="39" transform="rotate(315)" />
+      </g>
+      <circle cx="120" cy="142" r="27" fill="#e9b65b" /><circle cx="120" cy="142" r="12" fill="#fff0b9" />
+      <path d="M120 175v70" stroke="#6f9a71" stroke-width="7" stroke-linecap="round" /><path d="M119 218q-40-38-52-2 29 27 52 2M122 231q38-36 52-4-25 27-52 4" fill="#91b68c" />
+    </svg>
+  )}
+  {kind === "pearl" && (
+    <svg viewBox="0 0 240 300" aria-hidden="true">
+      <path d="M72 72c-35 42-24 132 48 154 72-22 83-112 48-154" fill="none" stroke="#d6ad6b" stroke-width="5" />
+      <g fill="#fffdf8" stroke="#e7d4c7" stroke-width="2"><circle cx="72" cy="85" r="11" /><circle cx="74" cy="113" r="11" /><circle cx="81" cy="140" r="11" /><circle cx="93" cy="164" r="11" /><circle cx="109" cy="183" r="11" /><circle cx="120" cy="196" r="11" /><circle cx="131" cy="183" r="11" /><circle cx="147" cy="164" r="11" /><circle cx="159" cy="140" r="11" /><circle cx="166" cy="113" r="11" /><circle cx="168" cy="85" r="11" /><circle cx="120" cy="232" r="16" /></g>
+      <circle cx="116" cy="227" r="4" fill="#fff" />
+    </svg>
+  )}
+  {kind === "heart" && (
+    <svg viewBox="0 0 240 300" aria-hidden="true">
+      <path d="M120 232S42 181 42 122c0-43 51-58 78-18 27-40 78-25 78 18 0 59-78 110-78 110Z" fill="#df799a" stroke="#a94469" stroke-width="4" />
+      <path d="M77 120q3-28 28-22" fill="none" stroke="#f8c8d8" stroke-width="8" stroke-linecap="round" /><circle cx="157" cy="157" r="5" fill="#f8c8d8" />
+    </svg>
+  )}
+  {kind === "star" && (
+    <svg viewBox="0 0 240 300" aria-hidden="true">
+      <path d="M120 58 139 111 196 112 151 147 167 203 120 171 73 203 89 147 44 112 101 111Z" fill="#f1c66c" stroke="#c28a35" stroke-width="4" />
+      <path d="m120 78 12 38 39 1-31 24 11 37-31-22-31 22 11-37-31-24 39-1Z" fill="#ffe6a5" />
+    </svg>
+  )}
+</div>

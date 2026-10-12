@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductArt from "../components/ProductArt.astro";
+
+const products = [
+  { name: "پاپیون صورتی", category: "اکسسوری مو", kind: "bow", bg: "#f7dce4", tag: "ناز و دوست‌داشتنی", text: "یه جزئیات کوچولو برای یه استایل خاص." },
+  { name: "گلبرگ بهاری", category: "طرح‌های گل‌دار", kind: "flower", bg: "#f7e9cb", tag: "حال خوب", text: "برای روزهایی که بوی بهار می‌دن." },
+  { name: "مروارید ظریف", category: "اکسسوری مینیمال", kind: "pearl", bg: "#e9e1f1", tag: "همیشه شیک", text: "یه درخشش کوچیک و دلنشین." },
+  { name: "قلب صورتی", category: "اکسسوری فانتزی", kind: "heart", bg: "#f4d4d8", tag: "قند توی دل", text: "برای وقتایی که دلت یه چیز بامزه می‌خواد." }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "نانا اکسسوری شاپ",
+  "alternateName": "Nana Accessoryy",
+  "url": "https://armankianian.github.io/nana-accessoryy-fa/",
+  "description": "فروشگاه اکسسوری نانا؛ اکسسوری‌های فانتزی، دخترانه و دوست‌داشتنی.",
+  "sameAs": ["https://www.instagram.com/nana.accessoryy/"],
+  "image": "https://armankianian.github.io/nana-accessoryy-fa/og-cover.svg",
+  "inLanguage": "fa-IR"
+};
+---
+<BaseLayout>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <div class="bg-[#542b3a] px-4 py-2.5 text-center text-xs tracking-wide text-white sm:text-sm">یه کوچولو خوشگلی، یه عالمه حس خوب ✿ <span class="text-[#f6c8d5]">محصولات نانا رو ببین</span></div>
+
+  <header class="sticky top-0 z-50 border-b border-[#f2e4e5] bg-[#fffaf7]/95 backdrop-blur-md">
+    <nav class="container-nana flex h-[76px] items-center justify-between gap-3" aria-label="ناوبری اصلی">
+      <a href="#home" class="shrink-0 leading-none" aria-label="صفحه اصلی نانا اکسسوری شاپ">
+        <span class="block font-serif text-2xl font-bold tracking-tight text-[#542b3a] sm:text-3xl">نانا<span class="text-[#c45b7d]">.</span></span>
+        <span class="mt-1 block text-[9px] tracking-[.2em] text-[#a46b7e]" dir="ltr">ACCESSORY SHOP</span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm text-[#765560] md:flex"><a class="hover:text-[#c45b7d]" href="#collection">دیدن اکسسوری‌ها</a><a class="hover:text-[#c45b7d]" href="#about">داستان نانا</a><a class="hover:text-[#c45b7d]" href="#faq">سوالات پرتکرار</a></div>
+      <a href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer" class="button-primary button-header">خرید از اینستاگرام ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="container-nana grid min-h-[600px] items-center gap-10 py-12 md:grid-cols-[1.02fr_.98fr] md:py-20">
+      <div class="relative z-10 py-4">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-[#f0d9df] bg-white/80 px-4 py-2 text-xs font-medium text-[#9c526b]"><span>✿</span> یه گوشه‌ی کوچیک برای خوشگلی‌های تو <span>✿</span></div>
+        <h1 class="max-w-[620px] text-4xl font-bold leading-[1.45] tracking-tight text-[#542b3a] sm:text-5xl lg:text-6xl">جزئیات کوچیک،<br /><span class="font-serif font-normal italic text-[#c45b7d]">حالِ خوبِ بزرگ.</span></h1>
+        <p class="mt-5 max-w-lg text-base leading-8 text-[#806b71] sm:text-lg">به دنیای نانا اکسسوری شاپ خوش اومدی! اینجا اکسسوری‌های دخترانه، فانتزی و اکسسوری مو رو با حال‌وهوایی بامزه و دوست‌داشتنی کنار هم می‌بینی تا استایل روزمره‌ت رو خاص‌تر کنی. یه چیز کوچولو برای خودت انتخاب کن و بدرخش. ♡</p>
+        <div class="mt-7 flex flex-wrap items-center gap-3"><a href="#collection" class="button-primary button-hero">گشت‌وگذار توی نانا <span class="mr-1">←</span></a><a href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-[#e8cdd5] px-5 py-4 text-sm font-semibold text-[#754455] transition hover:bg-white">اینستاگرام نانا ↗</a></div>
+        <div class="mt-9 flex items-center gap-3 text-sm text-[#967c83]"><span class="flex -space-x-2" dir="ltr"><span class="grid size-8 place-items-center rounded-full border-2 border-[#fffaf7] bg-[#f4d5df]">♡</span><span class="grid size-8 place-items-center rounded-full border-2 border-[#fffaf7] bg-[#f4e7ca]">✿</span><span class="grid size-8 place-items-center rounded-full border-2 border-[#fffaf7] bg-[#e6dff0]">✧</span></span><span>برای خوشحالی‌های کوچولوی خودت.</span></div>
+      </div>
+      <div class="relative mx-auto w-full max-w-[540px]">
+        <div class="absolute -left-2 top-5 z-10 grid size-24 rotate-12 place-items-center rounded-full bg-[#e7a9bb] text-center font-serif text-sm leading-5 text-[#542b3a] shadow-lg sm:-left-5 sm:size-28">با عشق<br />برای تو<br />♡</div>
+        <div class="grid grid-cols-[1fr_.8fr] items-center gap-4">
+          <div class="soft-shadow rotate-[3deg] rounded-[48%_48%_1.5rem_1.5rem] bg-[#f5dce3] p-3 sm:p-4"><div class="rounded-[48%_48%_1.1rem_1.1rem] bg-[#f9e9ed] p-2"><ProductArt kind="bow" bg="#f5dce3" label="تصویر تزئینی پاپیون صورتی فانتزی" /></div><p class="py-3 text-center font-serif text-lg text-[#754455]">صورتیِ دوست‌داشتنی ♡</p></div>
+          <div class="mt-16 rotate-[-4deg] rounded-[1.5rem] bg-[#f2e7d1] p-3 shadow-xl shadow-[#795348]/10 sm:p-4"><ProductArt kind="flower" bg="#f5e9ce" label="تصویر تزئینی اکسسوری گل‌دار" /><p class="py-3 text-center font-serif text-lg text-[#754455]">بوی بهار ✿</p></div>
+        </div>
+        <span class="absolute -bottom-7 right-5 font-serif text-4xl text-[#d59bad]">✳</span><span class="absolute -right-4 top-1/3 text-3xl text-[#d9b15c]">✧</span>
+      </div>
+    </section>
+
+    <section class="border-y border-[#f2e4e5] bg-white/70">
+      <div class="container-nana grid gap-5 py-7 text-center sm:grid-cols-3 sm:py-8">
+        <div class="flex items-center justify-center gap-3"><span class="text-2xl text-[#c45b7d]">♡</span><div class="text-right"><p class="text-sm font-semibold text-[#542b3a]">انتخاب‌های دوست‌داشتنی</p><p class="mt-1 text-xs text-[#967c83]">مدل‌های بامزه برای سلیقه‌های خاص</p></div></div>
+        <div class="flex items-center justify-center gap-3"><span class="text-2xl text-[#c45b7d]">✿</span><div class="text-right"><p class="text-sm font-semibold text-[#542b3a]">استایل خودِ خودت</p><p class="mt-1 text-xs text-[#967c83]">جزئیاتی که شبیه توئه</p></div></div>
+        <div class="flex items-center justify-center gap-3"><span class="text-2xl text-[#c45b7d]">✧</span><div class="text-right"><p class="text-sm font-semibold text-[#542b3a]">راحت باهامون حرف بزن</p><p class="mt-1 text-xs text-[#967c83]">سوالت رو توی دایرکت بپرس</p></div></div>
+      </div>
+    </section>
+
+    <section id="collection" class="container-nana py-20 sm:py-28">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-5 sm:mb-12">
+        <div><p class="mb-3 text-xs font-bold tracking-[.2em] text-[#c45b7d]">منتخب‌های نانا</p><h2 class="text-3xl font-bold tracking-tight text-[#542b3a] sm:text-4xl">یه چیز کوچولو، <span class="font-serif font-normal italic text-[#c45b7d]">یه عالمه ذوق.</span></h2><p class="mt-4 max-w-xl leading-7 text-[#806b71]">با چندتا از حال‌وهوای محبوب نانا آشنا شو؛ شاید اکسسوری بعدیِ موردعلاقه‌ت همین‌جا باشه.</p></div>
+        <a class="pill" href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer">دیدن مدل‌های جدید در اینستاگرام ↗</a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        {products.map((product) => <article class="group min-w-0">
+          <a href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer" class="block" aria-label={`پرس‌وجو درباره ${product.name} در اینستاگرام`}>
+            <div class="relative"><ProductArt kind={product.kind} bg={product.bg} label={`تصویر تزئینی ${product.name}`} /><span class="absolute right-3 top-3 rounded-full bg-[#fffaf7]/90 px-3 py-1.5 text-[11px] font-semibold text-[#8b4a61] sm:right-4 sm:top-4 sm:text-xs">{product.tag}</span><span class="absolute bottom-3 left-3 grid size-9 translate-y-1 place-items-center rounded-full bg-white text-lg text-[#542b3a] opacity-0 shadow-md transition group-hover:translate-y-0 group-hover:opacity-100">↖</span></div>
+            <div class="pt-4"><p class="text-xs text-[#b17c8c] sm:text-sm">{product.category}</p><h3 class="mt-1 text-base font-bold text-[#542b3a] sm:text-lg">{product.name}</h3><p class="mt-2 text-xs leading-6 text-[#927a81] sm:text-sm">{product.text}</p></div>
+          </a>
+        </article>)}
+      </div>
+      <p class="mt-8 text-center text-sm leading-6 text-[#a1878e]">تصویرهای این بخش فعلاً نمونه‌ی گرافیکی هستن؛ قبل از انتشار، عکس واقعی محصولات نانا رو جایگزین کن.</p>
+    </section>
+
+    <section id="about" class="overflow-hidden bg-[#f6e5e8]">
+      <div class="container-nana grid items-center gap-10 py-16 sm:py-20 md:grid-cols-[.8fr_1.2fr]">
+        <div class="relative mx-auto w-full max-w-[360px]"><div class="rotate-[5deg] rounded-[2rem] border-[10px] border-white/75 bg-[#f3d0da] p-5 shadow-xl"><ProductArt kind="pearl" bg="#f5e0e5" label="تصویر تزئینی اکسسوری مرواریدی" /><p class="py-3 text-center font-serif text-xl text-[#754455]">یه چیز قشنگ برای تو</p></div><span class="absolute -left-4 -top-5 grid size-16 rotate-12 place-items-center rounded-full bg-[#dca4b5] font-serif text-2xl text-white">♡</span></div>
+        <div class="max-w-2xl"><p class="mb-4 text-xs font-bold tracking-[.2em] text-[#b34d73]">یه یادداشت از نانا</p><h2 class="text-3xl font-bold leading-[1.7] tracking-tight text-[#542b3a] sm:text-4xl">گاهی یه جزئیات کوچولو می‌تونه کل روزت رو قشنگ‌تر کنه.</h2><p class="mt-5 leading-8 text-[#80636e]">نانا اکسسوری شاپ برای همون جزئیات دوست‌داشتنیه؛ اون چیزی که استایل ساده‌ت رو خاص می‌کنه، اکسسوری‌ای که صبح با ذوق انتخابش می‌کنی و هدیه‌ی کوچولویی که لبخند میاره روی لبت.</p><p class="mt-3 leading-8 text-[#80636e]">خوشحالیم که اینجایی! یه چرخی بزن، مدل موردعلاقه‌ت رو پیدا کن و برای سوال یا سفارش توی اینستاگرام بهمون پیام بده. ♡</p><a href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer" class="button-primary mt-7 inline-flex">بیا گپ بزنیم ↗</a></div>
+      </div>
+    </section>
+
+    <section id="faq" class="container-nana max-w-3xl py-20 sm:py-24">
+      <div class="mb-9 text-center"><p class="mb-3 text-xs font-bold tracking-[.2em] text-[#c45b7d]">چندتا جواب کوچولو</p><h2 class="text-3xl font-bold text-[#542b3a] sm:text-4xl">سوال داری؟ <span class="text-[#c45b7d]">♡</span></h2></div>
+      <div class="divide-y divide-[#efdcdf] border-y border-[#efdcdf]">
+        <details class="group py-5"><summary class="flex list-none items-center justify-between gap-4 font-medium text-[#542b3a]">چطوری سفارش بدم؟<span class="text-xl text-[#c45b7d] transition group-open:rotate-45">+</span></summary><p class="pt-3 text-sm leading-7 text-[#806b71]">به صفحه اینستاگرام نانا سر بزن و اسم یا عکس محصولی که دوست داری رو توی دایرکت بفرست. برای راهنمایی درباره موجودی، قیمت و مراحل سفارش کمکت می‌کنیم.</p></details>
+        <details class="group py-5"><summary class="flex list-none items-center justify-between gap-4 font-medium text-[#542b3a]">قیمت و موجودی محصولات رو از کجا ببینم؟<span class="text-xl text-[#c45b7d] transition group-open:rotate-45">+</span></summary><p class="pt-3 text-sm leading-7 text-[#806b71]">برای اطلاع از قیمت روز و موجودی، از طریق اینستاگرام پیام بده. اطلاعات محصولات ممکنه تغییر کنه؛ بهتره قبل از سفارش موجودی رو بپرسی.</p></details>
+        <details class="group py-5"><summary class="flex list-none items-center justify-between gap-4 font-medium text-[#542b3a]">مدل‌های جدید رو چطور ببینم؟<span class="text-xl text-[#c45b7d] transition group-open:rotate-45">+</span></summary><p class="pt-3 text-sm leading-7 text-[#806b71]">پیج @nana.accessoryy رو دنبال کن تا از مدل‌های تازه، عکس‌ها و خبرهای فروشگاه باخبر بشی.</p></details>
+      </div>
+    </section>
+
+    <section class="container-nana pb-20">
+      <div class="relative overflow-hidden rounded-[2rem] bg-[#542b3a] px-6 py-12 text-center sm:px-12 sm:py-16"><span class="absolute -right-4 -top-12 font-serif text-[150px] text-white/[.06]">♡</span><span class="absolute -bottom-16 -left-2 font-serif text-[180px] text-white/[.06]">✿</span><p class="relative mb-3 text-xs font-bold tracking-[.2em] text-[#f1b6c8]">اکسسوری بعدیِ موردعلاقه‌ت منتظرته</p><h2 class="relative text-3xl font-bold text-[#fff7f2] sm:text-4xl">بیا چیز قشنگت رو پیدا کنیم!</h2><p class="relative mx-auto mt-4 max-w-lg text-sm leading-7 text-[#e5cbd3]">مدل‌ها رو توی اینستاگرام ببین، سوالت رو بپرس یا فقط بیا سلام کن. همیشه جا برای یه کوچولو خوشگلی هست.</p><a href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer" class="relative mt-7 inline-flex rounded-full bg-[#fff7f2] px-7 py-4 text-sm font-bold text-[#542b3a] transition hover:-translate-y-0.5 hover:bg-[#f5dce3]">رفتن به پیج نانا ↗</a></div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[#f0e0e2] bg-white/60">
+    <div class="container-nana flex flex-col items-center justify-between gap-4 py-8 text-center sm:flex-row sm:text-right"><a href="#home" class="text-xl font-bold text-[#542b3a]">نانا<span class="text-[#c45b7d]">.</span> <span class="text-[10px] font-normal tracking-widest text-[#a46b7e]" dir="ltr">ACCESSORY SHOP</span></a><p class="text-xs text-[#9a8188]">با یه کوچولو عشق ساخته شده ♡ © {new Date().getFullYear()} نانا اکسسوری شاپ</p><a class="text-xs font-semibold text-[#8e3e5d] hover:underline" href="https://www.instagram.com/nana.accessoryy/" target="_blank" rel="noopener noreferrer">اینستاگرام ↗</a></div>
+  </footer>
+</BaseLayout>
